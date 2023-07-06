@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="3" class="table table-hover">
+    <tr>
+      <td>Book name </td>
+      <td>image</td>
+      <td>author name </td>
+	  <td>libraryname </td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.bookname}}</td>
+      <td><img src="/media/{{i.image}}" width="100dp" height="100dp"></td>
+      <td>{{i.authorname}}</td>
+	  <td>{{i.libid.libraryname}}</td>
+	  
+	  
+	  
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

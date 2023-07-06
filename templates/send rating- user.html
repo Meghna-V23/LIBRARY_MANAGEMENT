@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="usrrating">
+  <table width="200" border="3" class="table table-hover">
+    <tr>
+      <td>libraries</td>
+      <td><label>
+        <select name="select2">
+          {% for i in val %}
+              {% if i.lid.type == 'library' %}
+
+          <option value="{{i.id}}">{{i.libraryname}}</option>
+           {% endif %}
+          {% endfor %}
+        </select>
+      </label></td>
+      <td>rating</td>
+      <td><label>
+        <select name="select">
+
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="send" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{%  endblock %}

@@ -1,0 +1,34 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'libraryindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="247" border="1" class="table table-hover">
+    <tr>
+      <td width="64">Book name </td>
+      <td width="35">image</td>
+      <td width="68">author name </td>
+      <td width="52">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.bookname}}</td>
+      <td><img src="/media/{{i.image}}" width="100dp" height="100dp">{{i.image}}</td>
+      <td>{{i.authorname}}</td>
+      <td><p><a href="{% url 'editbooks1' id=i.id %}">edit</a></p>
+      <p><a href="{% url 'deletebooks' id=i.id %}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+    <td colspan="7"><div align="center"><a href="addbooks1">add</a></div></td>
+  </tr>
+
+  </table>
+</form>
+</body>
+{% endblock %}

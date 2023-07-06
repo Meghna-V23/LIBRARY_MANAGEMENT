@@ -1,0 +1,153 @@
+
+{% load static %}
+<html lang="zxx">
+
+<head>
+	<title> user registration</title>
+
+
+
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'user register/css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="{% static 'user register/css/font-awesome.css' %}">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!--header-->
+	<h1>
+<!--		<span>C</span>lassic-->
+		<span>R</span>egister
+		<span>F</span>orm</h1>
+	<!--//header-->
+	<!-- content -->
+	<div class="main-content-agile">
+		<div class="sub-main-w3">
+			<form action="usrrg" method="post">
+				<div class="form-style-agile">
+					<label>Full Name</label>
+					<div class="pom-agile">
+						<input name="textfield" type="text"  required pattern="[A-Z a-z.]{3,25}">
+						<span class="fa fa-user-o" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>House Name</label>
+					<div class="pom-agile">
+						<input name="textfield2" type="text" required pattern="[A-Z a-z.]{3,25}">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>Place</label>
+					<div class="pom-agile">
+						<input  name="textfield3" type="text" pattern="[A-Z a-z.]{3,25}">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>Post</label>
+					<div class="pom-agile">
+						<input  name="textfield4" type="text" pattern="[A-Z a-z.]{3,25}">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>PIN</label>
+					<div class="pom-agile">
+						<input  name="textfield5" type="text" required pattern="[0-9]{6}">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>Phone</label>
+					<div class="pom-agile">
+						<input  name="textfield6" type="text" required pattern="[6789][0-9]{9}">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>Email</label>
+					<div class="pom-agile">
+						<input  name="textfield7" type="text" required="">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>User Name</label>
+					<div class="pom-agile">
+						<input  name="textfield8" type="text" required="">
+						<span class="fa fa-envelope" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class="form-style-agile">
+					<label>Password</label>
+					<div class="pom-agile">
+						<input  name="textfield9" type="text" id="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 3 or more characters" required />
+						<span class="fa fa-key" aria-hidden="true"></span>
+					</div>
+				</div>
+
+<!--				<div class="sub-agile">-->
+<!--					<input type="checkbox" id="brand1" value="">-->
+<!--					<label for="brand1">-->
+<!--&lt;!&ndash;						<span></span>I Accept to the Terms & Conditions</label>&ndash;&gt;-->
+<!--				</div>-->
+				<div class="clear"></div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</div>
+	<!-- //content -->
+	<!--footer-->
+	<div class="footer">
+<!--		<h2>&copy; 2018 Classic Register Form. All rights reserved | Design by-->
+<!--			<a href="http://w3layouts.com">W3layouts</a>-->
+		</h2>
+	</div>
+	<!--//footer-->
+
+
+	<!-- password-script -->
+	<script>
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+	</script>
+	<!-- //password-script -->
+
+</body>
+
+</html>

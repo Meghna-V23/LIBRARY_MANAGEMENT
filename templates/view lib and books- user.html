@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<table width="339" border="3" class="table table-hover">
+  <tr>
+    <td width="42" height="53">library name </td>
+    <td width="32">place</td>
+    <td width="26">post</td>
+    <td width="18">pin</td>
+    <td width="31">email</td>
+    <td width="37">phone</td>
+    <td width="107">&nbsp;</td>
+  </tr>
+  {% for i in val %}
+  {% if i.lid.type == 'library' %}
+  <tr>
+    <td>{{i.libraryname}}</td>
+    <td>{{i.place}}</td>
+    <td>{{i.post}}</td>
+    <td>{{i.pin}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.phone}}</td>
+    <td ><a href="{% url 'viewbooks_user' id=i.lid.id %}" >View Book</a></td>
+
+
+  </tr>
+   {% endif %}
+   {% endfor %}
+</table>
+</body>
+{% endblock %}

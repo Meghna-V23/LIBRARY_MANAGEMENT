@@ -1,0 +1,36 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'libraryindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="324" border="1" class="table table-hover">
+    <tr>
+      <td width="42">user</td>
+      <td width="42">library</td>
+      <td width="93">complaint</td>
+      <td width="26">date</td>
+      <td width="87">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.uid.username}}</td>
+      <td>{{i.libid.libraryname}}</td>
+      <td>{{i.complaint}}</td>
+      <td>{{i.date}}</td>
+      {% if i.reply == 'pending' %}
+      <td><a href="{% url 'sendreply_lib' id=i.id %}">send reply</a></td>
+      {% else %}
+        <td>{{i.reply}}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+{% endblock %}

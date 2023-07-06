@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="s_complaint">
+  <table width="235" border="1" class ="table table-hover" >
+    <tr>
+      <td width="58">library</td>
+      <td width="161"><label>libraries
+        <select name="select">
+          {% for i in val %}
+              {% if i.lid.type == 'library' %}
+
+          <option value="{{i.id}}">{{i.libraryname}}</option>
+           {% endif %}
+          {% endfor %}
+            </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>complaint</td>
+      <td><label>
+        <textarea name="textarea" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="123" colspan="2"><label>
+          <div align="left">
+            <p>
+              <input type="submit" name="Submit" value="Send" />
+            <a href="viewcomplaintreply_user">viewcomplaintreply</a> </p>
+          </div>
+        </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

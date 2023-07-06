@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<table width="200" border="3" class="table table-hover">
+  <tr>
+    <td>library</td>
+    <td>user</td>
+    <td>rating</td>
+    <td>date</td>
+  </tr>
+  {% for i in val %}
+  <tr>
+    <td>{{i.libid.libraryname}}</td>
+    <td>{{i.uid.username}}</td>
+    <td>{{i.rating}}</td>
+    <td>{{i.date}}</td>
+
+  </tr>
+  {% endfor %}
+</table>
+</body>
+{% endblock %}
